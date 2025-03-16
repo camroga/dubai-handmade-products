@@ -1,3 +1,4 @@
+/* Global Styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,93 +6,204 @@
 }
 
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Press Start 2P', cursive;
+  background-color: #1a1a1a; /* Dark background */
+  color: #e0e0e0; /* Light gray text */
+  line-height: 1.6;
 }
 
+/* Header Styles */
 header {
-  background-color: #333;
+  background-color: #8b0000; /* Dark Red background */
   color: white;
-  padding: 10px 20px;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+header .logo h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 3px;
 }
 
 header nav a {
   color: white;
   text-decoration: none;
   margin: 0 15px;
-}
-
-.hero {
-  position: relative;
-  text-align: center;
-  background: #eee;
-}
-
-.hero img {
-  width: 100%;
-  height: auto;
-}
-
-.hero-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: white;
-}
-
-.cta-button {
-  background-color: #f59e42;
-  padding: 15px 30px;
-  color: white;
-  text-decoration: none;
   font-size: 18px;
-  border-radius: 5px;
+  text-transform: uppercase;
 }
 
+header nav a:hover {
+  text-decoration: underline;
+  color: #ff6347; /* Tomato color on hover */
+}
+
+/* Product Showcase */
 .product-showcase {
-  padding: 40px 20px;
+  padding: 60px 20px;
   text-align: center;
-  background-color: #f4f4f4;
+  background-color: #262626; /* Dark Gray background */
+}
+
+.product-showcase h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  color: #ff6347; /* Tomato color */
 }
 
 .product-grid {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .product {
-  background: white;
+  background: #333333; /* Dark background for product */
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
 }
 
-.product img {
+.product:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.6);
+}
+
+.product-gallery img {
   width: 100%;
-  max-width: 300px;
-  margin-bottom: 10px;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product-gallery img:hover {
+  transform: scale(1.05);
 }
 
 .product-name {
+  font-size: 1.2rem;
   font-weight: bold;
+  margin-top: 15px;
+  color: #ff6347; /* Tomato color */
 }
 
 .product-price {
-  color: #f59e42;
+  font-size: 1.5rem;
+  color: #800080; /* Dark Purple price color */
+  margin-top: 10px;
+}
+
+/* About & Contact Sections */
+.about, .contact {
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #1a1a1a; /* Dark background */
+}
+
+.about p, .contact p {
+  font-size: 1.2rem;
+  color: #e0e0e0; /* Light gray text */
 }
 
 footer {
   text-align: center;
-  background-color: #333;
+  background-color: #333333;
   color: white;
-  padding: 10px;
+  padding: 20px;
 }
 
 footer p {
   margin-top: 10px;
+  font-size: 14px;
+  color: #b0b0b0; /* Light gray footer text */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  background-color: rgba(0, 0, 0, 0.9); /* Black background with opacity */
+  padding-top: 60px;
+}
+
+.modal-content {
+  position: relative;
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+#modal-image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.modal-nav {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+button.prev, button.next {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  padding: 10px;
+  transition: background-color 0.3s;
+}
+
+button.prev:hover, button.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #f44336;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .product-showcase h2 {
+    font-size: 2rem;
+  }
+
+  .product-name {
+    font-size: 1rem;
+  }
+
+  .product-price {
+    font-size: 1.2rem;
+  }
 }
